@@ -1,0 +1,67 @@
+name: 📌 Change Request
+description: Solicitação formal de mudança para cliente
+title: "[CLIENTE] Tipo - Descrição resumida"
+labels: ["change-request"]
+assignees: []
+
+body:
+  - type: input
+    id: cliente
+    attributes:
+      label: Cliente
+      placeholder: "Ex: cliente-x"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: Tipo de Mudança
+      options:
+        - Feature
+        - Fix
+        - Hotfix
+        - Refactor
+        - Infra
+    validations:
+      required: true
+
+  - type: input
+    id: solicitante
+    attributes:
+      label: Solicitante (Cliente ou Interno)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: ambiente
+    attributes:
+      label: Ambiente Impactado
+      options:
+        - Desenvolvimento
+        - Homologação
+        - Produção
+    validations:
+      required: true
+
+  - type: textarea
+    id: descricao
+    attributes:
+      label: Descrição Funcional
+      description: Explique a necessidade da mudança
+    validations:
+      required: true
+
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Critérios de Aceite
+      description: Como validar que está correto?
+    validations:
+      required: true
+
+  - type: textarea
+    id: impacto
+    attributes:
+      label: Impacto Técnico
+      description: APIs, telas, banco, integrações afetadas

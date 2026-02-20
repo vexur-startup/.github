@@ -1,0 +1,24 @@
+name: 🚨 Hotfix
+description: Correção urgente em produção
+title: "[CLIENTE] HOTFIX - Descrição curta"
+labels: ["hotfix", "priority-high"]
+
+body:
+  - type: input
+    id: cliente
+    attributes:
+      label: Cliente
+    validations:
+      required: true
+
+  - type: textarea
+    id: descricao
+    attributes:
+      label: Problema em Produção
+    validations:
+      required: true
+
+  - type: textarea
+    id: impacto
+    attributes:
+      label: Impacto no Negócio

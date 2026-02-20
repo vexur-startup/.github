@@ -1,0 +1,31 @@
+name: 🐞 Bug Report
+description: Reportar problema em produção ou homologação
+title: "[CLIENTE] Bug - Descrição curta"
+labels: ["bug"]
+
+body:
+  - type: input
+    id: cliente
+    attributes:
+      label: Cliente
+    validations:
+      required: true
+
+  - type: textarea
+    id: descricao
+    attributes:
+      label: Descrição do Problema
+    validations:
+      required: true
+
+  - type: textarea
+    id: passos
+    attributes:
+      label: Passos para Reproduzir
+    validations:
+      required: true
+
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Comportamento Esperado
