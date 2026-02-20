@@ -8,8 +8,6 @@ Closes #
 
 ## 🏢 Cliente
 
-<!-- Nome do cliente -->
-
 ---
 
 ## 📂 Tipo
@@ -38,7 +36,9 @@ Closes #
 
 ### Integrações externas
 
-- ***
+-
+
+---
 
 ## 🧪 Testes
 
@@ -59,6 +59,7 @@ Descreva riscos conhecidos.
 - [ ] Branch nomeada corretamente
 - [ ] Issue vinculada
 - [ ] Code review realizado
+- [ ] Validação de acesso a rotas protegidas/estado do login (se aplicável)
 - [ ] Deploy homologação
 - [ ] Aprovação do cliente
 
