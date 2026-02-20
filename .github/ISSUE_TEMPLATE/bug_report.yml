@@ -1,13 +1,23 @@
 name: 🐞 Bug Report
 description: Reportar problema em produção ou homologação
-title: "[CLIENTE] Bug - Descrição curta"
+title: "BUG-2026-[CLIENTE]-001 | Descrição curta do problema"
 labels: ["bug"]
 
 body:
   - type: input
+    id: identificador
+    attributes:
+      label: Identificador da Issue
+      description: Siga o padrão BUG-ANO-[CLIENTE]-SEQUENCIAL
+      placeholder: "Ex: BUG-2026-cliente-x-001"
+    validations:
+      required: true
+
+  - type: input
     id: cliente
     attributes:
       label: Cliente
+      placeholder: "Ex: cliente-x"
     validations:
       required: true
 

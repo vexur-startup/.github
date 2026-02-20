@@ -1,10 +1,19 @@
 name: 📌 Change Request
 description: Solicitação formal de mudança para cliente
-title: "[CLIENTE] Tipo - Descrição resumida"
+title: "CR-2026-[CLIENTE]-001 | Descrição resumida da mudança"
 labels: ["change-request"]
 assignees: []
 
 body:
+  - type: input
+    id: identificador
+    attributes:
+      label: Identificador da Issue
+      description: Siga o padrão CR-ANO-[CLIENTE]-SEQUENCIAL
+      placeholder: "Ex: CR-2026-cliente-x-014"
+    validations:
+      required: true
+
   - type: input
     id: cliente
     attributes:

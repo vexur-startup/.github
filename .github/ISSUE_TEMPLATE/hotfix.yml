@@ -1,13 +1,23 @@
 name: 🚨 Hotfix
 description: Correção urgente em produção
-title: "[CLIENTE] HOTFIX - Descrição curta"
+title: "HF-2026-[CLIENTE]-001 | Descrição curta do hotfix"
 labels: ["hotfix", "priority-high"]
 
 body:
   - type: input
+    id: identificador
+    attributes:
+      label: Identificador da Issue
+      description: Siga o padrão HF-ANO-[CLIENTE]-SEQUENCIAL
+      placeholder: "Ex: HF-2026-cliente-x-003"
+    validations:
+      required: true
+
+  - type: input
     id: cliente
     attributes:
       label: Cliente
+      placeholder: "Ex: cliente-x"
     validations:
       required: true
 

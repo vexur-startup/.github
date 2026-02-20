@@ -48,7 +48,7 @@ feature[production-cliente]/CR-2026-[CLIENTE]-014-ajuste-calculo-comissao
 - Estrutura:
 
 ```text
-tipo/[CLIENTE]-ID-change-descricao-curta
+tipo[AMBIENTE-CLIENTE]/[CLIENTE]-ID-change-descricao-curta
 ```
 
 ### Tipos possíveis:
