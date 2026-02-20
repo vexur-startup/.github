@@ -14,19 +14,19 @@ Você precisa de um identificador único.
 - Modelo recomendado:
 
 ```text
-CR-2026-014
+CR-2026-[CLIENTE]-014
 ```
 
 - Estrutura:
 
 ```text
-CR-ANO-SEQUENCIAL
+CR-ANO-[NOME_CLIENTE]-SEQUENCIAL
 ```
 
 Exemplo de título da Issue:
 
 ```text
-[CR-2026-014] Ajuste regra de cálculo comissão cliente XPTO
+CR-2026-[CLIENTE]-014 | Ajuste regra de cálculo comissão
 ```
 
 Isso vira o identificador formal.
@@ -38,13 +38,17 @@ A branch sempre deriva da Change.
 - Formato recomendado:
 
 ```text
-feature/CR-2026-014-ajuste-calculo-comissao
+feature[stage-cliente]/CR-2026-[CLIENTE]-014-ajuste-calculo-comissao
+```
+
+```text
+feature[production-cliente]/CR-2026-[CLIENTE]-014-ajuste-calculo-comissao
 ```
 
 - Estrutura:
 
 ```text
-tipo/ID-change-descricao-curta
+tipo/[CLIENTE]-ID-change-descricao-curta
 ```
 
 ### Tipos possíveis:
@@ -63,7 +67,12 @@ Exemplo real:
 
 ```text
 
-fix/CR-2026-021-validacao-cep-api
+fix[stage-cliente]/CR-2026-[CLIENTE]-021-validacao-cep-api
+```
+
+```text
+
+fix[production-cliente]/CR-2026-[CLIENTE]-021-validacao-cep-api
 ```
 
 Isso cria rastreabilidade automática.
@@ -75,13 +84,13 @@ O título da PR deve ser formal e referenciar a Change.
 Formato:
 
 ```text
-CR-2026-014 - Ajuste regra de cálculo comissão
+CR-2026-[CLIENTE]-014 - Ajuste regra de cálculo comissão
 ```
 
 Conventional Commits:
 
 ```text
-feat(CR-2026-014): ajuste regra cálculo comissão cliente XPTO
+feat(CR-2026-[CLIENTE]-014): ajuste regra cálculo comissão
 ```
 
 ## Como conectar tudo
@@ -90,7 +99,7 @@ Dentro da PR, sempre incluir:
 
 ```text
 Closes #123
-Ref: CR-2026-014
+Ref: CR-2026-[CLIENTE]-014
 ```
 
 Onde:
@@ -98,7 +107,7 @@ Onde:
 ```text
 #123 é o número da Issue
 
-CR-2026-014 é o ID formal
+CR-2026-[CLIENTE]-014 é o ID formal
 ```
 
 Isso cria vínculo automático.
@@ -111,13 +120,17 @@ Você cria Issue:
 
 ```text
 #123
-[CR-2026-014] Ajuste regra cálculo comissão cliente XPTO
+CR-2026-[CLIENTE]-014 | Ajuste regra cálculo comissão
 ```
 
 #### Desenvolvedor cria branch
 
 ```text
-feature/CR-2026-014-ajuste-calculo-comissao
+feature[stage-cliente]/CR-2026-[CLIENTE]-014-ajuste-calculo-comissao
+```
+
+```text
+feature[production-cliente]/CR-2026-[CLIENTE]-014-ajuste-calculo-comissao
 ```
 
 #### Desenvolvedor abre PR
@@ -125,14 +138,14 @@ feature/CR-2026-014-ajuste-calculo-comissao
 Título:
 
 ```text
-CR-2026-014 - Ajuste regra cálculo comissão
+CR-2026-[CLIENTE]-014 | Ajuste regra cálculo comissão
 
 ```
 
 Descrição:
 
 ```text
-Implementa ajuste conforme CR-2026-014.
+Implementa ajuste conforme CR-2026-[CLIENTE]-014.
 
 Closes #123
 ```
