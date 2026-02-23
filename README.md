@@ -1,151 +1,142 @@
 # Estrutura Organizacional
 
-| Elemento | Função                            |
-| -------- | --------------------------------- |
-| Issue    | Documento oficial de mudança (CR) |
-| Branch   | Implementação técnica             |
-| PR       | Revisão técnica da mudança        |
-| Release  | Entrega formal                    |
+| Elemento    | Função                                         |
+| ----------- | ---------------------------------------------- |
+| Monday Task | Documento oficial de mudança (rastreabilidade) |
+| Branch      | Implementação técnica                          |
+| PR          | Revisão técnica da mudança                     |
+| Release     | Entrega formal                                 |
 
-## Como nomear a Change (Issue)
+---
 
-Você precisa de um identificador único.
+## Rastreabilidade via Monday.com
 
-- Modelo recomendado:
+O controle de mudanças é feito através dos IDs de **Board** e **Task** do Monday.
 
-```text
-CR-2026-[CLIENTE]-014
+A URL de uma task segue o padrão:
+
+```
+https://vexur-company.monday.com/boards/[BOARD_ID]/pulses/[TASK_ID]
 ```
 
-- Estrutura:
+O identificador usado no fluxo é sempre o **ID da Task** com prefixo `T`:
 
-```text
-CR-ANO-[NOME_CLIENTE]-SEQUENCIAL
+```
+T11318795000
 ```
 
-Exemplo de título da Issue:
-
-```text
-CR-2026-[CLIENTE]-014 | Ajuste regra de cálculo comissão
-```
-
-Isso vira o identificador formal.
+---
 
 ## Como nomear a Branch
 
-A branch sempre deriva da Change.
+A branch sempre deriva da task do Monday.
 
-- Formato recomendado:
+- Formato:
 
-```text
-feature[stage-cliente]/CR-2026-[CLIENTE]-014-ajuste-calculo-comissao
+```
+tipo(ambiente-cliente)/T[TASK_ID]-descricao-curta
 ```
 
-```text
-feature[production-cliente]/CR-2026-[CLIENTE]-014-ajuste-calculo-comissao
+- Exemplos:
+
+```
+feat(stage-cliente)/T11318795000-ajuste-calculo-comissao
+feat(production-cliente)/T11318795000-ajuste-calculo-comissao
 ```
 
-- Estrutura:
-
-```text
-tipo[AMBIENTE-CLIENTE]/[CLIENTE]-ID-change-descricao-curta
+```
+fix(stage-cliente)/T11318795000-validacao-cep-api
+fix(production-cliente)/T11318795000-validacao-cep-api
 ```
 
-### Tipos possíveis:
+### Tipos possíveis
 
-- feature/
+- `feat`
+- `fix`
+- `hotfix`
+- `improvement`
+- `refactor`
 
-- fix/
-
-- hotfix/
-
-- improvement/
-
-- refactor/
-
-Exemplo real:
-
-```text
-
-fix[stage-cliente]/CR-2026-[CLIENTE]-021-validacao-cep-api
-```
-
-```text
-
-fix[production-cliente]/CR-2026-[CLIENTE]-021-validacao-cep-api
-```
-
-Isso cria rastreabilidade automática.
+---
 
 ## Como nomear a Pull Request
 
-O título da PR deve ser formal e referenciar a Change.
+O título da PR deve identificar o cliente, referenciar o ID da task do Monday e ter uma descrição clara.
 
-Formato:
+- Formato:
 
-```text
-CR-2026-[CLIENTE]-014 - Ajuste regra de cálculo comissão
+```
+[CLIENTE] T[TASK_ID] - Descrição da mudança
 ```
 
-Conventional Commits:
+- Exemplo:
 
-```text
-feat(CR-2026-[CLIENTE]-014): ajuste regra cálculo comissão
 ```
+[VEXUR] T11318795000 - Ajuste regra de cálculo comissão
+```
+
+- Conventional Commits:
+
+```
+feat([CLIENTE]/T11318795000): ajuste regra cálculo comissão
+```
+
+- Exemplo:
+
+```
+feat(vexur/T11318795000): ajuste regra cálculo comissão
+```
+
+---
 
 ## Como conectar tudo
 
-Dentro da PR, sempre incluir:
+Na descrição da PR, sempre incluir o link direto para a task do Monday:
 
-```text
-Closes #123
-Ref: CR-2026-[CLIENTE]-014
+```
+Ref: https://vexur-company.monday.com/boards/[BOARD_ID]/pulses/[TASK_ID]
 ```
 
-Onde:
+Exemplo:
 
-```text
-#123 é o número da Issue
+```
+Implementa ajuste conforme task T11318795000.
 
-CR-2026-[CLIENTE]-014 é o ID formal
+Ref: https://vexur-company.monday.com/boards/18399639420/pulses/11318795000
 ```
 
-Isso cria vínculo automático.
+---
 
 ## Exemplo Completo (Fluxo Real)
 
 #### Cliente solicita mudança
 
-Você cria Issue:
+Task criada no Monday:
 
-```text
-#123
-CR-2026-[CLIENTE]-014 | Ajuste regra cálculo comissão
+```
+Board: 18399639420
+Task:  T11318795000 | Ajuste regra cálculo comissão
 ```
 
 #### Desenvolvedor cria branch
 
-```text
-feature[stage-cliente]/CR-2026-[CLIENTE]-014-ajuste-calculo-comissao
 ```
-
-```text
-feature[production-cliente]/CR-2026-[CLIENTE]-014-ajuste-calculo-comissao
+feat(stage-cliente)/T11318795000-ajuste-calculo-comissao
+feat(production-cliente)/T11318795000-ajuste-calculo-comissao
 ```
 
 #### Desenvolvedor abre PR
 
 Título:
 
-```text
-CR-2026-[CLIENTE]-014 | Ajuste regra cálculo comissão
-
+```
+[VEXUR] T11318795000 - Ajuste regra de cálculo comissão
 ```
 
 Descrição:
 
-```text
-Implementa ajuste conforme CR-2026-[CLIENTE]-014.
+```
+Implementa ajuste conforme task T11318795000.
 
-Closes #123
+Ref: https://vexur-company.monday.com/boards/18399639420/pulses/11318795000
 ```
