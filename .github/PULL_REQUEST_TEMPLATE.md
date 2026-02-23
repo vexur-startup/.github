@@ -1,8 +1,16 @@
 # 📌 Resumo da Mudança
 
-## 🔗 Issue
+## 🔗 Quadro Monday
 
-Closes #
+```text
+escreva aqui o link do quadro
+```
+
+## 🔗 Tarefa Monday
+
+```text
+escreva aqui o link da tarefa
+```
 
 ---
 
@@ -36,9 +44,7 @@ Closes #
 
 ### Integrações externas
 
--
-
----
+- ***
 
 ## 🧪 Testes
 
