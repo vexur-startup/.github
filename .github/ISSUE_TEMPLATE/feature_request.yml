@@ -1,0 +1,95 @@
+name: ✨ Feature Request
+description: Solicitação formal de nova funcionalidade
+title: "FEAT-2026-[CLIENTE]-001 | Descrição resumida da feature"
+labels: ["feature"]
+assignees: []
+
+body:
+  - type: input
+    id: identificador
+    attributes:
+      label: Identificador da Issue
+      description: Siga o padrão FEAT-ANO-[CLIENTE]-SEQUENCIAL
+      placeholder: "Ex: FEAT-2026-cliente-x-007"
+    validations:
+      required: true
+
+  - type: input
+    id: cliente
+    attributes:
+      label: Cliente
+      placeholder: "Ex: cliente-x"
+    validations:
+      required: true
+
+  - type: input
+    id: solicitante
+    attributes:
+      label: Solicitante (Cliente ou Interno)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: prioridade
+    attributes:
+      label: Prioridade
+      options:
+        - 🔴 Crítica
+        - 🟠 Alta
+        - 🟡 Média
+        - 🟢 Baixa
+    validations:
+      required: true
+
+  - type: dropdown
+    id: ambiente
+    attributes:
+      label: Ambiente Impactado
+      options:
+        - Desenvolvimento
+        - Homologação
+        - Produção
+    validations:
+      required: true
+
+  - type: dropdown
+    id: estimativa
+    attributes:
+      label: Estimativa de Esforço
+      options:
+        - XS (< 2h)
+        - S (2h – 4h)
+        - M (4h – 1d)
+        - L (1d – 3d)
+        - XL (> 3d)
+    validations:
+      required: true
+
+  - type: textarea
+    id: descricao
+    attributes:
+      label: Descrição Funcional
+      description: Explique a necessidade e o contexto da feature
+    validations:
+      required: true
+
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Critérios de Aceite
+      description: Como validar que a feature está corretamente implementada?
+    validations:
+      required: true
+
+  - type: textarea
+    id: impacto
+    attributes:
+      label: Impacto Técnico
+      description: APIs, telas, banco, integrações afetadas
+
+  - type: textarea
+    id: mockups
+    attributes:
+      label: Mockups / Referências Visuais
+      description: Cole imagens, links de Figma, ou qualquer referência visual relevante
+      placeholder: "Ex: https://figma.com/..."
