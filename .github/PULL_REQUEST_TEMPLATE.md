@@ -3,13 +3,13 @@
 ## 🔗 Quadro Monday
 
 ```text
-escreva aqui o link do quadro
+https://vexur-company.monday.com/boards/[BOARD_ID]
 ```
 
 ## 🔗 Tarefa Monday
 
 ```text
-escreva aqui o link da tarefa
+https://vexur-company.monday.com/boards/[BOARD_ID]/pulses/[TASK_ID]
 ```
 
 ---
@@ -62,8 +62,9 @@ Descreva riscos conhecidos.
 
 ## 📋 Checklist
 
-- [ ] Branch nomeada corretamente
-- [ ] Issue vinculada
+- [ ] Branch nomeada corretamente (`tipo(ambiente-cliente)/T[TASK_ID]-descricao`)
+- [ ] PR nomeada corretamente (`[CLIENTE] T[TASK_ID] - Descrição`)
+- [ ] Link da tarefa Monday preenchido acima
 - [ ] Code review realizado
 - [ ] Validação de acesso a rotas protegidas/estado do login (se aplicável)
 - [ ] Deploy homologação
