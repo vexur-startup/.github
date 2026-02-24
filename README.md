@@ -63,6 +63,8 @@ fix(production-cliente)/T11318795000-validacao-cep-api
 
 O título da PR deve identificar o cliente, referenciar o ID da task do Monday e ter uma descrição clara.
 
+Utilizar campo de `Labels` para indicar o tipo de mudança (feature, bugfix, etc) e de qual ambiente se refere.
+
 - Formato:
 
 ```
