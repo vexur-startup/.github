@@ -143,3 +143,9 @@ Implementa ajuste conforme task T11318795000 do board B18399639420.
 
 Ref: https://vexur-company.monday.com/boards/18399639420/pulses/11318795000
 ```
+
+[[Voltar ao topo](#estrutura-organizacional)]
+
+## Fluxo de PR
+
+![Fluxo PR](fluxo-pr.png)
