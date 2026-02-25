@@ -19,9 +19,10 @@ A URL de uma task segue o padrão:
 https://vexur-company.monday.com/boards/[BOARD_ID]/pulses/[TASK_ID]
 ```
 
-O identificador usado no fluxo é sempre o **ID da Task** com prefixo `T`:
+Os identificadores usados no fluxo são o **ID do Board** com prefixo `B` e o **ID da Task** com prefixo `T`:
 
 ```
+B18399639420
 T11318795000
 ```
 
@@ -34,19 +35,19 @@ A branch sempre deriva da task do Monday.
 - Formato:
 
 ```
-tipo(ambiente-cliente)/T[TASK_ID]-descricao-curta
+tipo(ambiente-cliente)/B[BOARD_ID]-T[TASK_ID]-descricao-curta
 ```
 
 - Exemplos:
 
 ```
-feat(stage-cliente)/T11318795000-ajuste-calculo-comissao
-feat(production-cliente)/T11318795000-ajuste-calculo-comissao
+feat(stage-cliente)/B18399639420-T11318795000-ajuste-calculo-comissao
+feat(production-cliente)/B18399639420-T11318795000-ajuste-calculo-comissao
 ```
 
 ```
-fix(stage-cliente)/T11318795000-validacao-cep-api
-fix(production-cliente)/T11318795000-validacao-cep-api
+fix(stage-cliente)/B18399639420-T11318795000-validacao-cep-api
+fix(production-cliente)/B18399639420-T11318795000-validacao-cep-api
 ```
 
 ### Tipos possíveis
@@ -61,32 +62,32 @@ fix(production-cliente)/T11318795000-validacao-cep-api
 
 ## Como nomear a Pull Request
 
-O título da PR deve identificar o cliente, referenciar o ID da task do Monday e ter uma descrição clara.
+O título da PR deve identificar o cliente, referenciar os IDs do board e da task do Monday e ter uma descrição clara.
 
 Utilizar campo de `Labels` para indicar o tipo de mudança (feature, bugfix, etc) e de qual ambiente se refere.
 
 - Formato:
 
 ```
-[CLIENTE] T[TASK_ID] - Descrição da mudança
+[CLIENTE] B[BOARD_ID] T[TASK_ID] - Descrição da mudança
 ```
 
 - Exemplo:
 
 ```
-[VEXUR] T11318795000 - Ajuste regra de cálculo comissão
+[VEXUR] B18399639420 T11318795000 - Ajuste regra de cálculo comissão
 ```
 
 - Conventional Commits:
 
 ```
-feat([CLIENTE]/T11318795000): ajuste regra cálculo comissão
+feat([CLIENTE]/B[BOARD_ID]-T[TASK_ID]): descrição da mudança
 ```
 
 - Exemplo:
 
 ```
-feat(vexur/T11318795000): ajuste regra cálculo comissão
+feat(vexur/B18399639420-T11318795000): ajuste regra cálculo comissão
 ```
 
 ---
@@ -102,7 +103,7 @@ Ref: https://vexur-company.monday.com/boards/[BOARD_ID]/pulses/[TASK_ID]
 Exemplo:
 
 ```
-Implementa ajuste conforme task T11318795000.
+Implementa ajuste conforme task T11318795000 do board B18399639420.
 
 Ref: https://vexur-company.monday.com/boards/18399639420/pulses/11318795000
 ```
@@ -116,15 +117,15 @@ Ref: https://vexur-company.monday.com/boards/18399639420/pulses/11318795000
 Task criada no Monday:
 
 ```
-Board: 18399639420
+Board: B18399639420
 Task:  T11318795000 | Ajuste regra cálculo comissão
 ```
 
 #### Desenvolvedor cria branch
 
 ```
-feat(stage-cliente)/T11318795000-ajuste-calculo-comissao
-feat(production-cliente)/T11318795000-ajuste-calculo-comissao
+feat(stage-cliente)/B18399639420-T11318795000-ajuste-calculo-comissao
+feat(production-cliente)/B18399639420-T11318795000-ajuste-calculo-comissao
 ```
 
 #### Desenvolvedor abre PR
@@ -132,13 +133,13 @@ feat(production-cliente)/T11318795000-ajuste-calculo-comissao
 Título:
 
 ```
-[VEXUR] T11318795000 - Ajuste regra de cálculo comissão
+[VEXUR] B18399639420 T11318795000 - Ajuste regra de cálculo comissão
 ```
 
 Descrição:
 
 ```
-Implementa ajuste conforme task T11318795000.
+Implementa ajuste conforme task T11318795000 do board B18399639420.
 
 Ref: https://vexur-company.monday.com/boards/18399639420/pulses/11318795000
 ```
